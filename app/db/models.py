@@ -1,15 +1,16 @@
-from sqlalchemy import Column, Integer, String, Float, DateTime
+from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey
 from app.db.database import Base
 from datetime import datetime
+from sqlalchemy.orm import relationship
 
 class User(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String, unique=True, index=True)
-    email = Column(String, unique=True, index=True)
+    email = Column(String, unique=True, index=True, nullable=True)
     hashed_password = Column(String)
-   
+    predictions = relationship("Prediction", back_populates="user")
 
 class Prediction(Base):
     __tablename__ = "predictions"
@@ -22,3 +23,5 @@ class Prediction(Base):
     predicted_class = Column(Integer)
     predicted_label = Column(String)
     created_at = Column(DateTime, default=datetime.now)
+    user = relationship("User", back_populates="predictions")
+    user_id = Column(Integer, ForeignKey("users.id"))

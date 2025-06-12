@@ -24,7 +24,7 @@ def register(user: UserCreate, db: Session = Depends(get_db)):
     hashed_password = pwd_context.hash(user.password)
     new_user = models.User(
         username=user.username,
-        email=user.email,
+        email=user.email if user.email else None,
         hashed_password=hashed_password
     )
     db.add(new_user)

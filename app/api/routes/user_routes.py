@@ -7,6 +7,6 @@ from app.schemas.user import UserResponse
 
 router = APIRouter()
 #retrieve all users from the database for depuration purposes
-@router.get("/users", response_model=List[UserResponse], tags=["Users"])
+@router.get("/", response_model=List[UserResponse], tags=["Users"])
 def list_users(db: Session = Depends(get_db)):
     return db.query(models.User).all()

@@ -1,5 +1,5 @@
 from pydantic import BaseModel, EmailStr
-
+#Schemas for user-related data
 class UserCreate(BaseModel):
     username: str
     email: EmailStr  

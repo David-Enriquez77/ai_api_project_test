@@ -8,7 +8,7 @@ from app.schemas.predict import PredictionOut
 from app.auth.deps import get_current_user
 
 router = APIRouter(tags=["Prediction History"])
-
+# Create a new route to get prediction history for the current user
 @router.get("/", response_model=List[PredictionOut], summary="Get prediction history for the current user")
 def get_predictions(db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
     predictions = (
@@ -18,7 +18,7 @@ def get_predictions(db: Session = Depends(get_db), current_user: User = Depends(
         .all()
     )
     return predictions
-
+# Create a new route to get detailed info of a prediction by ID
 @router.get("/{prediction_id}", response_model=PredictionOut, summary="Get detailed info of a prediction by ID")
 def get_prediction_detail(
     prediction_id: int = Path(..., description="The ID of the prediction to retrieve"),

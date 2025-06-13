@@ -95,7 +95,7 @@ Authorization: Bearer YOUR_TOKEN
 ---
 
 #  Frontend Usage
-Flower Feature Guidelines
+### Flower Feature Guidelines
 In order to know what values you can use:
 These inputs correspond to the features used in the classic Iris dataset for flower classification. Below are the typical ranges and example values you can use:
 

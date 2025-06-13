@@ -7,14 +7,14 @@ from passlib.context import CryptContext
 
 router = APIRouter()
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
+#Retrieve the database session
 def get_db():
     db = SessionLocal()
     try:
         yield db
     finally:
         db.close()
-
+#Create a new router for user registration
 @router.post("/register", response_model=UserResponse)
 def register(user: UserCreate, db: Session = Depends(get_db)):
     db_user = db.query(models.User).filter((models.User.email == user.email) | (models.User.username == user.username)).first()

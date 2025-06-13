@@ -8,7 +8,8 @@ from app.utils.jwt import create_access_token
 
 router = APIRouter()
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
+#Create a new router for authentication
+# This router handles user login and token generation
 @router.post("/login", response_model=Token)
 def login(data: LoginData, db: Session = Depends(get_db)):
     user = db.query(models.User).filter(models.User.username == data.username).first()

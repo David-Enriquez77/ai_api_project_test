@@ -2,7 +2,8 @@ from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey
 from app.db.database import Base
 from datetime import datetime
 from sqlalchemy.orm import relationship
-
+#User and Prediction models for the database
+# These models define the structure of the database tables for users and their predictions.
 class User(Base):
     __tablename__ = "users"
 

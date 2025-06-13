@@ -9,6 +9,7 @@ from app.auth.deps import get_current_user
 
 router = APIRouter(tags=["Prediction"])
 
+#This are the possible result of the prediction
 label_map = {0: "Setosa", 1: "Versicolor", 2: "Virginica"}
 
 @router.post("/", summary="Make a prediction with the Iris ONNX model")

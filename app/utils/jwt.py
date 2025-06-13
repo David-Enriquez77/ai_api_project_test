@@ -3,7 +3,8 @@ from typing import Optional
 from jose import JWTError, jwt
 from fastapi import HTTPException, status
 from app.auth.config import SECRET_KEY, ALGORITHM, ACCESS_TOKEN_EXPIRE_MINUTES
-
+#Creation of JWT tokens for user authentication
+# This module provides functions to create and decode JWT tokens used for user authentication.
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
     to_encode = data.copy()
     expire = datetime.now(timezone.utc) + (expires_delta if expires_delta else timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))

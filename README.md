@@ -94,36 +94,42 @@ Authorization: Bearer YOUR_TOKEN
 
 ---
 
-#  Frontend Usage
-### Flower Feature Guidelines
-In order to know what values you can use:
-These inputs correspond to the features used in the classic Iris dataset for flower classification. Below are the typical ranges and example values you can use:
+# Frontend Usage
 
-Common Feature Ranges
-Feature	Typical Range (cm)	Description
-Sepal Length	4.3 – 7.9	Length of the sepal
-Sepal Width	   2.0 – 4.4	Width of the sepal
-Petal Length	1.0 – 6.9	Length of the petal
-Petal Width	   0.1 – 2.5	Width of the petal
+## Flower Feature Guidelines
 
-Example Input Values by Class
-Iris-setosa:
+To input proper values for predictions, refer to the typical feature ranges from the classic **Iris dataset** used for flower classification.
 
-Sepal: ~5.0 × 3.5
+---
 
-Petal: ~1.5 × 0.2
+###  Common Feature Ranges
 
-Iris-versicolor:
+| Feature         | Typical Range (cm) | Description           |
+|-----------------|--------------------|-----------------------|
+| Sepal Length    | 4.3 – 7.9          | Length of the sepal   |
+| Sepal Width     | 2.0 – 4.4          | Width of the sepal    |
+| Petal Length    | 1.0 – 6.9          | Length of the petal   |
+| Petal Width     | 0.1 – 2.5          | Width of the petal    |
 
-Sepal: ~5.9 × 2.8
+---
 
-Petal: ~4.2 × 1.3
+###  Example Input Values by Iris Class
 
-Iris-virginica:
+- **Iris-setosa**  
+  - Sepal: ~5.0 × 3.5  
+  - Petal: ~1.5 × 0.2
 
-Sepal: ~6.5 × 3.0
+- **Iris-versicolor**  
+  - Sepal: ~5.9 × 2.8  
+  - Petal: ~4.2 × 1.3
 
-Petal: ~5.5 × 2.0
+- **Iris-virginica**  
+  - Sepal: ~6.5 × 3.0  
+  - Petal: ~5.5 × 2.0
+
+---
+
+Use these ranges to guide your inputs when using the prediction form in the frontend.
 
 
 
